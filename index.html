@@ -13,7 +13,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: #000;
+            position: relative;
         }
         h1 {
             color: #333;
@@ -63,6 +64,13 @@
             background-color: #f44336;
             color: white;
         }
+        .image-corner {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -96,6 +104,7 @@
             <button class="equals" onclick="calculate()">=</button>
         </div>
     </div>
+    <img src="https://static.tildacdn.com/tild6561-3766-4339-a630-663834363933/Qwen-03.png" class="image-corner" alt="Corner Image">
 
     <script>
         function appendCharacter(char) {
