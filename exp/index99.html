@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие слушателям вебинара</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('ya-ru-screenshot.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #4a90e2;
+        }
+        #joke-container {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .joke-text {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .joke-author {
+            font-weight: bold;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Добро пожаловать на вебинар!</h1>
+        <p>Уважаемые слушатели, рады приветствовать вас на нашем вебинаре.</p>
+        <p>Желаем вам приятного просмотра и полезной информации!</p>
+        <div id="joke-container">
+            <p class="joke-text" id="joke-text"></p>
+            <p class="joke-author" id="joke-author"></p>
+        </div>
+    </div>
+
+    <!-- Подключение файла с анекдотами -->
+    <script src="jokes.js"></script>
+    <script>
+        // Функция для отображения случайного анекдота
+        function displayRandomJoke() {
+            // Выбор случайного анекдота
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            const randomJoke = jokes[randomIndex];
+            
+            // Отображение анекдота и автора
+            document.getElementById('joke-text').textContent = randomJoke.text;
+            document.getElementById('joke-author').textContent = randomJoke.author;
+        }
+        
+        // Отображение анекдота при загрузке страницы
+        displayRandomJoke();
+    </script>
+</body>
+</html>
