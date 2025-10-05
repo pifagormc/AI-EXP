@@ -1,5 +1,6 @@
 # Ignore all files and directories
 *
 # Except for the following:
+!.gitignore
 !exp/
 !agent-modes-config/
